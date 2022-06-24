@@ -4,13 +4,16 @@ Ce fichiers contient, l'ensemble des fonction de notre contrat de vote dans l'or
 ainsi qu'une estimation des gaz via une méthode interne estimateGaz() ainsi que via eth-gaz-reporter. 
 Le coverage n'a pas pu être réalisés à cause des problématique avec ganache.
 
-Nombre de test réalisés:   36 tests
+Nombre de test réalisés: 
+	36 tests
 
 Lirairie : 
--@openzeppelin/test-helpers pour expectRevert, expectEvent
--chai : pour les BigNumbers et expect
+
+	-@openzeppelin/test-helpers pour expectRevert, expectEvent
+	-chai : pour les BigNumbers et expect
 
 TEST DES FONCTION BASIQUES :
+
       √ should be valid to test mechanism (3ms)
       
 		=> permet de s'assurer que la fonction expect de la librairie chai est fonctionnelle.
@@ -33,7 +36,9 @@ TEST ESTIMATIMATION DES FRAIS VIA FONCTION TRUFFLE ESTIMATEGAZ FUNCTION
 	
 QUANTITE DE GAZ POUR LE DEPLOIEMENT DU CONTRAT: 2137238
 
-TEST FONCTION getVoter()
+TEST FONCTION 
+	
+	=>getVoter()
 
       √ should require 1 parameter (575ms)
       
@@ -43,7 +48,9 @@ TEST FONCTION getVoter()
       
       √ should return be able to call the function when voter registered by owner => isRegistered: true , hasVoted: false, votedProposalId: 0 (237ms, 50196 gas)
       √ should return false to isRegister for voter 2 => isRegistered: false , hasVoted: false, votedProposalId: 0 (58ms)
+      
 TEST FONCTION DE REGISTRATION 
+
 	=> addVoter()
 	
       √ should require 1 parameter (20ms)
@@ -63,7 +70,9 @@ TEST FONCTION DE REGISTRATION
       √ should revert an error if stage NOT RegisteringVoters (218ms, 74384 gas)
 	  
 TEST FONCTION DE REGISTRATION PROPOSAL
+
 	=>  getOneProposal() 
+	
       √ should return proposal1 made by voter 1 and id (326ms, 76620 gas)
       
       √ should require to be a voter, voter 2 NOT registered : getOneProposal() (46ms)
@@ -86,7 +95,9 @@ TEST DES FONCTION DE GESTION DES WORKFLOWS ET CAPTATION DES EVENEMENT
       √ WorkflowStatus should change from 3 to 4 and emit WorkflowStatusChange (145ms, 30509 gas)
       
 TEST SUR LA GESTION DES VOTES
+
 	=>addVoter()
+	
       √ Should expect 1 parameter (68ms)
       
       √ should put hasvoted to true when voter 1 vote has voted (421ms, 58101 gas)
@@ -102,6 +113,7 @@ TEST SUR LA GESTION DES VOTES
       √ Should be called be able to vote if session over (388ms, 56895 gas)
 	  
 TEST DE LA FONCTION DE DECOUVERTE DES RESULTATS DU VOTES
+
 	=> tallyVotes(), show the right winner proposition: here proposal2
 	
       √ should be called at stage 5 only (204ms, 26034 gas)  
@@ -110,6 +122,7 @@ TEST DE LA FONCTION DE DECOUVERTE DES RESULTATS DU VOTES
       
 
 TEST DE L'ESTIMATION GLOBALE DES FONCTION DU CONTRAT VIA ETH GAZ REPORTER
+
 ·------------------------------------------|----------------------------|-------------|----------------------------·
 |   Solc version: 0.8.13+commit.abaa5c0e   ·  Optimizer enabled: false  ·  Runs: 200  ·  Block limit: 6718946 gas  │
 ···········································|····························|·············|·····························
